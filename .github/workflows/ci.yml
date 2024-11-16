@@ -7,7 +7,7 @@ on: workflow_dispatch
 
 jobs:
   CI_job:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     env:
 
