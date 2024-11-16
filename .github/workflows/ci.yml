@@ -1,0 +1,45 @@
+name: CI
+
+on: workflow_dispatch
+ # pull_request:
+    #branches:
+    #  - main
+
+jobs:
+  CI_job:
+    runs_on: ubuntu-latest
+
+    env:
+
+      DBT_ENV_SECRET_ACCOUNT_ID: ${{ secrets.DBT_ENV_SECRET_ACCOUNT_ID }}
+      DBT_ENV_SECRET_USER_PASSWORD: ${{ secrets.DBT_ENV_SECRET_USER_PASSWORD }}
+      DBT_ENV_SECRET_USER_NAME: ${{ secrets.DBT_ENV_SECRET_USER_NAME }}
+      DBT_ENV_SECRET_DATABASE_NAME: ${{ secrets.DBT_ENV_SECRET_DATABASE_NAME }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      S3_STORAGE_PATH_MANIFEST: ${{ secrets.S3_STORAGE_PATH_MANIFEST }}
+
+    steps:
+    - name: Checkout repository 
+      uses: actions/checkout@v3
+
+    - name: Set-up python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: pip install -r requiremets.txt
+
+    - name: Authenticate to AWS
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-2
+
+    - name: Upload file to s3
+      run: aws s3 cp s3://${{ secrets.AWS_SECRET_ACCESS_KEY }}/manifest.json ./
+
+    - name: Teste
+      run: 'OK'
