@@ -39,7 +39,7 @@ jobs:
         aws-region: us-east-2
 
     - name: Upload file to s3
-      run: aws s3 cp s3://${{ secrets.AWS_SECRET_ACCESS_KEY }}/manifest.json ./
+      run: aws s3 cp s3://${{ secrets.AWS_SECRET_ACCESS_KEY }}/manifest.json ./ --region us-east-2
 
     - name: Teste
       run: echo "OK"
