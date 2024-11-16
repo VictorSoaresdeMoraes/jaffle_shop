@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: JAFFLE_SHOP
+    schema: RAW
+    tables:
+      - name: raw_products
+        identifier: raw_products
+        columns:
+          - name: SKU
+            description: 'Product identifier' 
+
+          - name: NAME
+            description: 'Product name'
+
+          - name: TYPE
+            description: 'Product type'
+
+          - name: PRICE
+            description: 'Current price of the product'
+
+          - name: DESCRIPTION
+            description: 'Product description'
+
+          - name: SOURCE
+            description: 'Path location of ingestioned_date'
+
+          - name: INGESTION_DATE
+            description: 'Data ingestion timestamp'
