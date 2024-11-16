@@ -42,4 +42,4 @@ jobs:
       run: aws s3 cp s3://${{ secrets.AWS_SECRET_ACCESS_KEY }}/manifest.json ./
 
     - name: Teste
-      run: 'OK'
+      run: echo "OK"
