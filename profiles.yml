@@ -10,4 +10,15 @@ dbt_jaffle_shop:
       type: snowflake
       user: "{{ env_var('DBT_ENV_SECRET_USER_NAME') }}"
       warehouse: COMPUTE-WH
+
+    prd:
+      account: "{{ env_var('DBT_ENV_SECRET_ACCOUNT_ID') }}"
+      database: "{{ env_var('DBT_ENV_SECRET_DATABASE_NAME') }}"
+      password: "{{ env_var('DBT_ENV_SECRET_USER_PASSWORD') }}"
+      role: transform
+      schema: PRD
+      threads: 1
+      type: snowflake
+      user: "{{ env_var('DBT_ENV_SECRET_USER_NAME') }}"
+      warehouse: COMPUTE-WH
   target: dev
