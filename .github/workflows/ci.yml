@@ -39,10 +39,15 @@ jobs:
         aws-region: us-east-2
 
     - name: Upload file to s3
-      run: aws s3 cp s3://${{ secrets.S3_STORAGE_PATH_MANIFEST }}/manifest.json ./ --region us-east-2
+      run: aws s3 cp s3://${{ secrets.S3_STORAGE_PATH_MANIFEST }}/manifest.json ./ --region us-east-2 || echo "manifest.json not found"
 
     - name: Run dbt debug
       run: dbt debug
 
     - name: Run dbt build
-      run: dbt build -s 'state:modified+' --state ./
+      run: |
+        if [-f. "./manifest.json"]; then
+          dbt build -s 'state:modified+' --state ./
+        else
+          dbt build
+        fi
