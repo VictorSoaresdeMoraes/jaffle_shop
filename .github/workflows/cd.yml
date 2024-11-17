@@ -1,4 +1,4 @@
-name: CI
+name: CD
 
 on: workflow_dispatch
  # pull_request:
@@ -42,12 +42,15 @@ jobs:
       run: aws s3 cp s3://${{ secrets.S3_STORAGE_PATH_MANIFEST }}/manifest.json ./ --region us-east-2 || echo "manifest.json not found"
 
     - name: Run dbt debug
-      run: dbt debug
+      run: dbt debug --target prd
 
     - name: Run dbt build
       run: |
         if [-f. "./manifest.json"]; then
-          dbt build -s 'state:modified+' --state ./
+          dbt build -s 'state:modified+' --state ./ --target prd
         else
-          dbt build
+          dbt build --target prd
         fi
+
+    - name: Upload manifest file to s3
+      run: aws s3 cp ./target/manifest.json s3://${{ secrets.S3_STORAGE_PATH_MANIFEST }}/ --region us-east-2
