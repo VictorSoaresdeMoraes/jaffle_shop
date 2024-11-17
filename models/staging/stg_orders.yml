@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: ''
+    columns:
+      - name: ID
+        description: 'Order identifier'
+
+      - name: CUSTOMER_ID
+        description: 'Customer identifier'
+
+      - name: ORDERED_DATE
+        description: 'Order date'
+
+      - name: STORE_ID
+        description: 'Store identifier'
+
+      - name: SUBTOTAL
+        description: 'Total amount of the order, not including tax'
+
+      - name: 'TAX_PAID'
+        description: 'Total tax amount paid in the order'
+
+      - name: TOTAL
+        description: 'Total amount of the order, including tax'
+
+      - name: SOURCE
+        description: 'Path location of ingestioned data'
+
+      - name: UPDATE_DATE
+        description: 'Record updated timestamp'
