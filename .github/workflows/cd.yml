@@ -6,7 +6,7 @@ on: #workflow_dispatch
       - main
 
 jobs:
-  CI_job:
+  CD_job:
     runs-on: ubuntu-latest
 
     env:
