@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_orders
-    description: ''
+    description: 'Stage for orders table. Data in this table are cleansed and standardized'
     columns:
       - name: ID
         description: 'Order identifier'

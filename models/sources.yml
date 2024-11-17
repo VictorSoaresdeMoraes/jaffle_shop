@@ -72,3 +72,21 @@ sources:
 
           - name: INGESTION_DATE
             description: 'Data ingestion timestamp'
+      
+      - name: raw_order_items
+        identifier: raw_order_items
+        columns:
+          - name: ID
+            description: 'Order item identifier'
+
+          - name: ORDER_ID
+            description: 'Order identifier'
+
+          - name: SKU
+            description: 'Product identifier'
+
+          - name: SOURCE
+            description: 'Path location of ingestioned data'
+
+          - name: INGESTION_DATE
+            description: 'Data ingestion timestamp'
