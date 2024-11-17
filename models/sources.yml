@@ -23,7 +23,7 @@ sources:
             description: 'Product description'
 
           - name: SOURCE
-            description: 'Path location of ingestioned_date'
+            description: 'Path location of ingestioned data'
 
           - name: INGESTION_DATE
             description: 'Data ingestion timestamp'
