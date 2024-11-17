@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_stores
+    description: 'Stage for stores table. Data in this table are cleansed and standardized'
+    columns:
+          - name: ID
+            description: 'Store identifier'
+
+          - name: NAME
+            description: 'Store name'
+
+          - name: OPENED_DATE
+            description: 'Store opened date'
+
+          - name: TAX_RATE
+            description: 'Store tax rate'
+
+          - name: SOURCE
+            description: 'Path location of ingestioned data'
+
+          - name: UPDATE_DATE
+            description: 'Record updated timestamp'

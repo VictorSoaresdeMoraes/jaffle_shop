@@ -90,3 +90,24 @@ sources:
 
           - name: INGESTION_DATE
             description: 'Data ingestion timestamp'
+
+      - name: raw_stores
+        identifier: raw_stores
+        columns:
+          - name: ID
+            description: 'Store identifier'
+
+          - name: NAME
+            description: 'Store name'
+
+          - name: OPENED_AT
+            description: 'Store opened date'
+
+          - name: TAX_RATE
+            description: 'Store tax rate'
+
+          - name: SOURCE
+            description: 'Path location of ingestioned data'
+
+          - name: INGESTION_DATE
+            description: 'Data ingestion timestamp'
