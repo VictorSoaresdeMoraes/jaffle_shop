@@ -32,10 +32,79 @@ sources:
         identifier: raw_customers
         columns:
           - name: ID
-            description: Customer identifier
+            description: 'Customer identifier'
 
           - name: NAME
-            description: Customer name
+            description: 'Customer name'
+
+          - name: SOURCE
+            description: 'Path location of ingestioned data'
+
+          - name: INGESTION_DATE
+            description: 'Data ingestion timestamp'
+
+      - name: raw_orders
+        identifier: raw_orders
+        columns:
+          - name: ID
+            description: 'Order identifier'
+
+          - name: CUSTOMER
+            description: 'Customer identifier'
+
+          - name: ORDERED_AT
+            description: 'Order date'
+
+          - name: STORE_ID
+            description: 'Store identifier'
+
+          - name: SUBTOTAL
+            description: 'Total amount of the order, not including tax'
+
+          - name: 'TAX_PAID'
+            description: 'Total tax amount paid in the order'
+
+          - name: ORDER_TOTAL
+            description: 'Total amount of the order, including tax'
+          
+          - name: SOURCE
+            description: 'Path location of ingestioned data'
+
+          - name: INGESTION_DATE
+            description: 'Data ingestion timestamp'
+      
+      - name: raw_order_items
+        identifier: raw_order_items
+        columns:
+          - name: ID
+            description: 'Order item identifier'
+
+          - name: ORDER_ID
+            description: 'Order identifier'
+
+          - name: SKU
+            description: 'Product identifier'
+
+          - name: SOURCE
+            description: 'Path location of ingestioned data'
+
+          - name: INGESTION_DATE
+            description: 'Data ingestion timestamp'
+
+      - name: raw_stores
+        identifier: raw_stores
+        columns:
+          - name: ID
+            description: 'Store identifier'
+
+          - name: NAME
+            description: 'Store name'
+
+          - name: OPENED_AT
+            description: 'Store opened date'
+
+          - name: TAX_RATE
+            description: 'Store tax rate'
 
           - name: SOURCE
             description: 'Path location of ingestioned data'
