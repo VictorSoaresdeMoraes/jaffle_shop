@@ -27,3 +27,18 @@ sources:
 
           - name: INGESTION_DATE
             description: 'Data ingestion timestamp'
+
+      - name: raw_customers
+        identifier: raw_customers
+        columns:
+          - name: ID
+            description: Customer identifier
+
+          - name: NAME
+            description: Customer name
+
+          - name: SOURCE
+            description: 'Path location of ingestioned data'
+
+          - name: INGESTION_DATE
+            description: 'Data ingestion timestamp'
