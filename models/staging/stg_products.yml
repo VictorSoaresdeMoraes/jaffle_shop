@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_products
-    description: 'Stage for producta table. Data in this table are cleansed and standardized'
+    description: 'Stage for products table. Data in this table are cleansed and standardized'
     columns:
       - name: SKU
         description: 'Product identifier' 
