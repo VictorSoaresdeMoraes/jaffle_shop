@@ -40,14 +40,19 @@ jobs:
 
     - name: Get manifest file from s3
       run: aws s3 cp s3://${{ secrets.S3_STORAGE_PATH_MANIFEST }}/manifest.json ./ --region us-east-2 || echo "manifest.json not found"
+    
+    - name: Get schema_id
+      id: schema_id
+      run: echo "SCHEMA_ID=${{ github.event.pull_request.number }}_${{ github.sha }}" >> $GITHUB_ENV
 
     - name: Run dbt debug
-      run: dbt debug
+      run: |
+        dbt debug --target pr --vars "schema_id: $SCHEMA_ID"
 
     - name: Run dbt build
       run: |
         if [-f. "./manifest.json"]; then
-          dbt build -s 'state:modified+' --state ./
+          dbt build -s 'state:modified+' --defer --state ./ --target pr --vars "schema_id: $SCHEMA_ID"
         else
           dbt build
         fi
