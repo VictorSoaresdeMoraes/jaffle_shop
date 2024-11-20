@@ -46,7 +46,7 @@ jobs:
       run: echo "SCHEMA_ID={{ github.event.pull_request.number }}_{{ github.sha }}" >> $GITHUB_ENV
 
     - name: Run dbt debug
-      run: dbt debug --targer pr --vars "schema_id:$SCHEMA_ID"
+      run: dbt debug --target pr --vars "schema_id:$SCHEMA_ID"
 
     - name: Run dbt build
       run: |
