@@ -51,19 +51,3 @@ jobs:
         else
           dbt build
         fi
-
-    - name: Generate dbt docs
-      run: |
-        dbt deps
-        dbt docs generate --target-path dbt-docs
-
-    - name: Upload dbt docs artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: dbt-docs
-        name: dbt-docs
-
-    - name: Publish dbt docs to GitHub Pages
-      uses: actions/deploy-pages@v4
-      with:
-        artifact_name: dbt-docs
