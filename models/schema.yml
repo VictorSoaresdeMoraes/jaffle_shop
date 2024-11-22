@@ -1,0 +1,108 @@
+version: 2
+
+models:
+
+  - name: stg_customers
+    description: 'Stage for customers table. Data in this table are cleansed and standardized'
+    columns:
+      - name: ID
+        description: 'Customer identifier'
+
+      - name: NAME
+        description: 'Customer name'
+
+      - name: SOURCE
+        description: 'Path location of ingestioned data'
+
+      - name: UPDATE_DATE
+        description: 'Record updated timestamp'
+
+  - name: stg_order_items
+    description: 'Stage for order items table. Data in this table are cleansed and standardized'
+    columns:
+      - name: ID
+        description: 'Order item identifier'
+
+      - name: ORDER_ID
+        description: 'Order identifier'
+
+      - name: SKU
+        description: 'Product identifier'
+
+      - name: SOURCE
+        description: 'Path location of ingestioned data'
+
+  - name: stg_orders
+    description: 'Stage for orders table. Data in this table are cleansed and standardized'
+    columns:
+      - name: ID
+        description: 'Order identifier'
+
+      - name: CUSTOMER_ID
+        description: 'Customer identifier'
+
+      - name: ORDERED_DATE
+        description: 'Order date'
+
+      - name: STORE_ID
+        description: 'Store identifier'
+
+      - name: SUBTOTAL
+        description: 'Total amount of the order, not including tax'
+
+      - name: 'TAX_PAID'
+        description: 'Total tax amount paid in the order'
+
+      - name: TOTAL
+        description: 'Total amount of the order, including tax'
+
+      - name: SOURCE
+        description: 'Path location of ingestioned data'
+
+      - name: UPDATE_DATE
+        description: 'Record updated timestamp'
+
+  - name: stg_products
+    description: 'Stage for products table. Data in this table are cleansed and standardized'
+    columns:
+      - name: SKU
+        description: 'Product identifier' 
+
+      - name: NAME
+        description: 'Product name'
+
+      - name: TYPE
+        description: 'Product type'
+
+      - name: PRICE
+        description: 'Current price of the product'
+
+      - name: DESCRIPTION
+        description: 'Product description'
+
+      - name: SOURCE
+        description: 'Path location of ingestioned data'
+
+      - name: UPDATE_DATE
+        description: 'Record updated timestamp'
+
+  - name: stg_stores
+    description: 'Stage for stores table. Data in this table are cleansed and standardized'
+    columns:
+          - name: ID
+            description: 'Store identifier'
+
+          - name: NAME
+            description: 'Store name'
+
+          - name: OPENED_DATE
+            description: 'Store opened date'
+
+          - name: TAX_RATE
+            description: 'Store tax rate'
+
+          - name: SOURCE
+            description: 'Path location of ingestioned data'
+
+          - name: UPDATE_DATE
+            description: 'Record updated timestamp'
