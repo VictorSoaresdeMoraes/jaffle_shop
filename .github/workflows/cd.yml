@@ -6,6 +6,15 @@ on: #workflow_dispatch
       - main
   workflow_dispatch:
 
+env:
+  DBT_ENV_SECRET_ACCOUNT_ID: ${{ secrets.DBT_ENV_SECRET_ACCOUNT_ID }}
+  DBT_ENV_SECRET_USER_PASSWORD: ${{ secrets.DBT_ENV_SECRET_USER_PASSWORD }}
+  DBT_ENV_SECRET_USER_NAME: ${{ secrets.DBT_ENV_SECRET_USER_NAME }}
+  DBT_ENV_SECRET_DATABASE_NAME: ${{ secrets.DBT_ENV_SECRET_DATABASE_NAME }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  S3_STORAGE_PATH_MANIFEST: ${{ secrets.S3_STORAGE_PATH_MANIFEST }}
+
 jobs:
   CD_job:
     runs-on: ubuntu-latest
