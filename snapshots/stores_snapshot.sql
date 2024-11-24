@@ -5,8 +5,10 @@
         target_schema=target.schema,
         unique_key='ID',
 
-        strategy='timestamp',
-        updated_at='ingestion_date',    )
+        strategy='check',
+        updated_at='ingestion_date',
+        check_cols=['TAX_RATE']
+        )
 }}
 
 SELECT *
