@@ -5,13 +5,11 @@
         target_schema=target.schema,
         unique_key='ID',
 
-        strategy='check',
-        updated_at='ingestion_date',
-        check_cols=['TAX_RATE']
+        strategy='check'
         )
 }}
 
 SELECT *
-FROM source('JAFFLE_SHOP', 'raw_stores')
+FROM {{ source('JAFFLE_SHOP', 'raw_stores') }}
 
 {% endsnapshot %}
