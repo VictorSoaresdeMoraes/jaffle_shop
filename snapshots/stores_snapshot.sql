@@ -6,9 +6,7 @@
         unique_key='ID',
 
         strategy='timestamp',
-        updated_at='ingestion_date',
-        check_cols=['TAX_RATE']
-    )
+        updated_at='ingestion_date',    )
 }}
 
 SELECT *
