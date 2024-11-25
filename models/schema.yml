@@ -14,6 +14,9 @@ models:
       - name: SOURCE
         description: 'Path location of ingestioned data'
 
+      - name: INGESTION_DATE
+        description: 'Data ingestion timestamp'
+
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
 
@@ -31,6 +34,12 @@ models:
 
       - name: SOURCE
         description: 'Path location of ingestioned data'
+
+      - name: INGESTION_DATE
+        description: 'Data ingestion timestamp'
+
+      - name: UPDATE_DATE
+        description: 'Record updated timestamp'
 
   - name: stg_orders
     description: 'Stage for orders table. Data in this table are cleansed and standardized'
@@ -59,6 +68,9 @@ models:
       - name: SOURCE
         description: 'Path location of ingestioned data'
 
+      - name: INGESTION_DATE
+        description: 'Data ingestion timestamp'
+
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
 
@@ -80,8 +92,17 @@ models:
       - name: DESCRIPTION
         description: 'Product description'
 
+      - name: DBT_VALID_FROM
+        description: 'Start date which the sku (product identifier) attributes are valid'
+
+      - name: DBT_VALID_TO
+        description: 'End date which the sku (product identifier) attributes are valid'
+
       - name: SOURCE
         description: 'Path location of ingestioned data'
+
+      - name: INGESTION_DATE
+        description: 'Data ingestion timestamp'
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
@@ -89,20 +110,29 @@ models:
   - name: stg_stores
     description: 'Stage for stores table. Data in this table are cleansed and standardized'
     columns:
-          - name: ID
-            description: 'Store identifier'
+      - name: ID
+        description: 'Store identifier'
 
-          - name: NAME
-            description: 'Store name'
+      - name: NAME
+        description: 'Store name'
 
-          - name: OPENED_DATE
-            description: 'Store opened date'
+      - name: OPENED_DATE
+        description: 'Store opened date'
 
-          - name: TAX_RATE
-            description: 'Store tax rate'
+      - name: TAX_RATE
+        description: 'Store tax rate'
 
-          - name: SOURCE
-            description: 'Path location of ingestioned data'
+      - name: DBT_VALID_FROM
+        description: 'Start date which the store attributes are valid'
 
-          - name: UPDATE_DATE
-            description: 'Record updated timestamp'
+      - name: DBT_VALID_TO
+        description: 'End date which the store attributes are valid'
+
+      - name: SOURCE
+        description: 'Path location of ingestioned data'
+
+      - name: INGESTION_DATE
+        description: 'Data ingestion timestamp'
+
+      - name: UPDATE_DATE
+        description: 'Record updated timestamp'
