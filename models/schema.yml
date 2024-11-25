@@ -7,132 +7,172 @@ models:
     columns:
       - name: ID
         description: 'Customer identifier'
+        type: varchar(100)
 
       - name: NAME
         description: 'Customer name'
+        type: varchar(255)
 
       - name: SOURCE
         description: 'Path location of ingestioned data'
+        type: varchar(100)
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
+        type: timestamp
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
+        type: timestamp
 
   - name: stg_order_items
     description: 'Stage for order items table. Data in this table are cleansed and standardized'
     columns:
       - name: ID
         description: 'Order item identifier'
+        type: varchar(100)
 
       - name: ORDER_ID
         description: 'Order identifier'
+        type: varchar(100)
 
       - name: SKU
         description: 'Product identifier'
+        type: varchar(30)
 
       - name: SOURCE
         description: 'Path location of ingestioned data'
+        type: varchar(100)
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
+        type: timestamp
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
+        type: timestamp
 
   - name: stg_orders
     description: 'Stage for orders table. Data in this table are cleansed and standardized'
     columns:
       - name: ID
         description: 'Order identifier'
+        type: varchar(100)
 
       - name: CUSTOMER_ID
         description: 'Customer identifier'
+        type: varchar(100)
 
       - name: ORDERED_DATE
         description: 'Order date'
+        type: timestamp
 
       - name: STORE_ID
         description: 'Store identifier'
+        type: varchar(100)
 
       - name: SUBTOTAL
         description: 'Total amount of the order, not including tax'
+        type: number(9,2)
 
       - name: 'TAX_PAID'
         description: 'Total tax amount paid in the order'
+        type: number(9,2)
 
       - name: TOTAL
         description: 'Total amount of the order, including tax'
+        type: number(9,2)
 
       - name: SOURCE
         description: 'Path location of ingestioned data'
+        type: varchar(100)
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
+        type: timestamp
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
+        type: timestamp
 
   - name: stg_products
     description: 'Stage for products table. Data in this table are cleansed and standardized'
     columns:
       - name: SKU
-        description: 'Product identifier' 
+        description: 'Product identifier'
+        type: varchar(30)
 
       - name: NAME
         description: 'Product name'
+        type: varchar(255)
 
       - name: TYPE
         description: 'Product type'
+        type: varchar(30)
 
       - name: PRICE
         description: 'Current price of the product'
+        type: number(9,2)
 
       - name: DESCRIPTION
         description: 'Product description'
+        type: varchar(255)
 
       - name: DBT_VALID_FROM
         description: 'Start date which the sku (product identifier) attributes are valid'
+        type: timestamp
 
       - name: DBT_VALID_TO
         description: 'End date which the sku (product identifier) attributes are valid'
+        type: timestamp
 
       - name: SOURCE
         description: 'Path location of ingestioned data'
+        type: varchar(100)
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
+        type: timestamp
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
+        type: timestamp
 
   - name: stg_stores
     description: 'Stage for stores table. Data in this table are cleansed and standardized'
     columns:
       - name: ID
         description: 'Store identifier'
+        type: varchar(100)
 
       - name: NAME
         description: 'Store name'
+        type: varchar(30)
 
       - name: OPENED_DATE
         description: 'Store opened date'
+        type: date
 
       - name: TAX_RATE
         description: 'Store tax rate'
+        type: float
 
       - name: DBT_VALID_FROM
         description: 'Start date which the store attributes are valid'
+        type: timestamp
 
       - name: DBT_VALID_TO
         description: 'End date which the store attributes are valid'
+        type: timestamp
 
       - name: SOURCE
         description: 'Path location of ingestioned data'
+        type: varchar(100)
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
+        type: timestamp
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
+        type: timestamp
