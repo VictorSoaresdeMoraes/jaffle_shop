@@ -1,5 +1,5 @@
-WITH raw_products AS (
-    SELECT * FROM {{ source('JAFFLE_SHOP', 'raw_products') }}
+WITH products AS (
+    SELECT * FROM {{ ref('snapshot_products') }}
 )
  
 SELECT 
@@ -8,6 +8,9 @@ SELECT
     CAST(TYPE AS VARCHAR(30)) AS TYPE,
     CAST(PRICE AS NUMERIC(9,2)) AS PRICE,
     CAST(DESCRIPTION AS VARCHAR(255)) AS DESCRIPTION,
+    DBT_VALID_FROM,
+    DBT_VALID_TO,
     CAST(SOURCE AS VARCHAR(100)) AS SOURCE,
+    CAST(INGESTION_DATE AS DATETIME) AS INGESTION_DATE,
     GETDATE() AS UPDATE_DATE
-FROM raw_products
+FROM products
