@@ -8,22 +8,33 @@ models:
       - name: ID
         description: 'Customer identifier'
         type: varchar(100)
+        data_tests:
+          - unique
+          - not_null
 
       - name: NAME
         description: 'Customer name'
         type: varchar(255)
+        data_tests:
+          - not_null
 
       - name: SOURCE
         description: 'Path location of ingestioned data'
         type: varchar(100)
+        data_tests:
+          - not_null
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
         type: timestamp
+        data_tests:
+          - not_null
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
         type: timestamp
+        data_tests:
+          - not_null
 
   - name: stg_order_items
     description: 'Stage for order items table. Data in this table are cleansed and standardized'
@@ -31,26 +42,39 @@ models:
       - name: ID
         description: 'Order item identifier'
         type: varchar(100)
+        data_tests:
+          - unique
+          - not_null
 
       - name: ORDER_ID
         description: 'Order identifier'
         type: varchar(100)
+        data_tests:
+          - not_null
 
       - name: SKU
         description: 'Product identifier'
         type: varchar(30)
+        data_tests:
+          - not_null
 
       - name: SOURCE
         description: 'Path location of ingestioned data'
         type: varchar(100)
+        data_tests:
+          - not_null
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
         type: timestamp
+        data_tests:
+          - not_null
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
         type: timestamp
+        data_tests:
+          - not_null
 
   - name: stg_orders
     description: 'Stage for orders table. Data in this table are cleansed and standardized'
@@ -58,42 +82,63 @@ models:
       - name: ID
         description: 'Order identifier'
         type: varchar(100)
+        data_tests:
+          - unique
+          - not_null
 
       - name: CUSTOMER_ID
         description: 'Customer identifier'
         type: varchar(100)
+        data_tests:
+          - not_null
 
       - name: ORDERED_DATE
         description: 'Order date'
         type: timestamp
+        data_tests:
+          - not_null
 
       - name: STORE_ID
         description: 'Store identifier'
         type: varchar(100)
+        data_tests:
+          - not_null
 
       - name: SUBTOTAL
         description: 'Total amount of the order, not including tax'
         type: number(9,2)
+        data_tests:
+          - not_null
 
       - name: 'TAX_PAID'
         description: 'Total tax amount paid in the order'
         type: number(9,2)
+        data_tests:
+          - not_null
 
       - name: TOTAL
         description: 'Total amount of the order, including tax'
         type: number(9,2)
+        data_tests:
+          - not_null
 
       - name: SOURCE
         description: 'Path location of ingestioned data'
         type: varchar(100)
+        data_tests:
+          - not_null
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
         type: timestamp
+        data_tests:
+          - not_null
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
         type: timestamp
+        data_tests:
+          - not_null
 
   - name: stg_products
     description: 'Stage for products table. Data in this table are cleansed and standardized'
@@ -101,26 +146,39 @@ models:
       - name: SKU
         description: 'Product identifier'
         type: varchar(30)
+        data_tests:
+          - unique
+          - not_null
 
       - name: NAME
         description: 'Product name'
         type: varchar(255)
+        data_tests:
+          - not_null
 
       - name: TYPE
         description: 'Product type'
         type: varchar(30)
+        data_tests:
+          - not_null
 
       - name: PRICE
         description: 'Current price of the product'
         type: number(9,2)
+        data_tests:
+          - not_null
 
       - name: DESCRIPTION
         description: 'Product description'
         type: varchar(255)
+        data_tests:
+          - not_null
 
       - name: DBT_VALID_FROM
         description: 'Start date which the sku (product identifier) attributes are valid'
         type: timestamp
+        data_tests:
+          - not_null
 
       - name: DBT_VALID_TO
         description: 'End date which the sku (product identifier) attributes are valid'
@@ -129,14 +187,20 @@ models:
       - name: SOURCE
         description: 'Path location of ingestioned data'
         type: varchar(100)
+        data_tests:
+          - not_null
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
         type: timestamp
+        data_tests:
+          - not_null
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
         type: timestamp
+        data_tests:
+          - not_null
 
   - name: stg_stores
     description: 'Stage for stores table. Data in this table are cleansed and standardized'
@@ -144,22 +208,33 @@ models:
       - name: ID
         description: 'Store identifier'
         type: varchar(100)
+        data_tests:
+          - unique
+          - not_null
 
       - name: NAME
         description: 'Store name'
         type: varchar(30)
+        data_tests:
+          - not_null
 
       - name: OPENED_DATE
         description: 'Store opened date'
         type: date
+        data_tests:
+          - not_null
 
       - name: TAX_RATE
         description: 'Store tax rate'
         type: float
+        data_tests:
+          - not_null
 
       - name: DBT_VALID_FROM
         description: 'Start date which the store attributes are valid'
         type: timestamp
+        data_tests:
+          - not_null
 
       - name: DBT_VALID_TO
         description: 'End date which the store attributes are valid'
@@ -168,11 +243,17 @@ models:
       - name: SOURCE
         description: 'Path location of ingestioned data'
         type: varchar(100)
+        data_tests:
+          - not_null
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
         type: timestamp
+        data_tests:
+          - not_null
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
         type: timestamp
+        data_tests:
+          - not_null
