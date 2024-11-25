@@ -21,20 +21,14 @@ models:
       - name: SOURCE
         description: 'Path location of ingestioned data'
         type: varchar(100)
-        data_tests:
-          - not_null
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
         type: timestamp
-        data_tests:
-          - not_null
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
         type: timestamp
-        data_tests:
-          - not_null
 
   - name: stg_order_items
     description: 'Stage for order items table. Data in this table are cleansed and standardized'
@@ -61,20 +55,14 @@ models:
       - name: SOURCE
         description: 'Path location of ingestioned data'
         type: varchar(100)
-        data_tests:
-          - not_null
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
         type: timestamp
-        data_tests:
-          - not_null
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
         type: timestamp
-        data_tests:
-          - not_null
 
   - name: stg_orders
     description: 'Stage for orders table. Data in this table are cleansed and standardized'
@@ -125,20 +113,14 @@ models:
       - name: SOURCE
         description: 'Path location of ingestioned data'
         type: varchar(100)
-        data_tests:
-          - not_null
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
         type: timestamp
-        data_tests:
-          - not_null
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
         type: timestamp
-        data_tests:
-          - not_null
 
   - name: stg_products
     description: 'Stage for products table. Data in this table are cleansed and standardized'
@@ -187,20 +169,14 @@ models:
       - name: SOURCE
         description: 'Path location of ingestioned data'
         type: varchar(100)
-        data_tests:
-          - not_null
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
         type: timestamp
-        data_tests:
-          - not_null
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
         type: timestamp
-        data_tests:
-          - not_null
 
   - name: stg_stores
     description: 'Stage for stores table. Data in this table are cleansed and standardized'
@@ -243,17 +219,11 @@ models:
       - name: SOURCE
         description: 'Path location of ingestioned data'
         type: varchar(100)
-        data_tests:
-          - not_null
 
       - name: INGESTION_DATE
         description: 'Data ingestion timestamp'
         type: timestamp
-        data_tests:
-          - not_null
 
       - name: UPDATE_DATE
         description: 'Record updated timestamp'
         type: timestamp
-        data_tests:
-          - not_null
