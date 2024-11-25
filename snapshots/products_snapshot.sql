@@ -5,7 +5,8 @@
         target_schema=target.schema,
         unique_key='SKU',
 
-        strategy='check',
+        strategy='timestamp',
+        updated_at='ingestion_date',
     )
 }}
 

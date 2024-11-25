@@ -5,7 +5,9 @@
         target_schema=target.schema,
         unique_key='ID',
 
-        strategy='check'
+        strategy='check',
+        check_cols=['TAX_RATE'],
+        updated_at='ingestion_date',
         )
 }}
 
